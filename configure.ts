@@ -196,6 +196,7 @@ async function configure() {
   }
 
   pkg.commit()
+  sink.logger.info('Configuration complete, please update your .gitignore file')
 }
 
 configure()

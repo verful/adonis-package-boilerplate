@@ -127,6 +127,7 @@ async function configure() {
   pkg.set('homepage', `${gitUrl}#readme`)
   pkg.set('main', `./build/providers/${providerName}.js`)
 
+  pkg.set('adonisjs.commands', [`${pkgName}/build/commands`])
   pkg.set('adonisjs.types', pkgName)
   pkg.set('adonisjs.providers', [pkgName])
   pkg.set('adonisjs.templates', {

@@ -50,6 +50,7 @@
   "main": "",
   "files": [
     "build/adonis-typings",
+    "build/commands",
     "build/providers",
     "build/src",
     "build/templates",

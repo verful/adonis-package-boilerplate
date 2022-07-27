@@ -177,11 +177,13 @@ async function configure() {
 
   if (!useHusky) {
     pkg.uninstall('husky')
+    await fs.rm('.husky', { force: true, recursive: true })
   }
 
   if (!useLintStaged) {
     pkg.uninstall('lint-staged')
     pkg.unset('lint-staged')
+    await fs.unlink('.husky/pre-commit')
   }
 
   if (!useCommitlint) {
@@ -189,6 +191,7 @@ async function configure() {
     pkg.uninstall('@commitlint/config-conventional')
     pkg.unset('commitlint')
     await fs.unlink('.github/workflows/commitlint.yml')
+    await fs.unlink('.husky/commit-msg')
   }
 
   if (selfDelete) {

@@ -44,6 +44,30 @@ export default class ${name} {
 }
 `)
 
+const scripts = {
+  yarn: {
+    pretest: 'yarn lint',
+    compile: 'yarn lint && yarn clean && tsc',
+    build: 'yarn compile && yarn copyfiles',
+    version: 'yarn build',
+    prepublishOnly: 'yarn build',
+  },
+  npm: {
+    pretest: 'npm run lint',
+    compile: 'npm run lint && npm run clean && tsc',
+    build: 'npm run compile && npm run copyfiles',
+    version: 'npm run build',
+    prepublishOnly: 'npm run build',
+  },
+  pnpm: {
+    pretest: 'pnpm lint',
+    compile: 'pnpm lint && pnpm clean && tsc',
+    build: 'pnpm compile && pnpm copyfiles',
+    version: 'pnpm build',
+    prepublishOnly: 'pnpm build',
+  },
+} as const
+
 async function run(command: string, ...args: string[]): Promise<string> {
   return execa(command, args).then(({ stdout }) => stdout)
 }
@@ -76,6 +100,12 @@ async function configure() {
     useCommitlint = await prompt.confirm('Setup commit lint?')
   }
   const selfDelete = await prompt.confirm('Delete the configure script?')
+
+  const packageManager = sink.utils.getPackageManager(process.cwd())
+
+  for (const [scriptName, script] of Object.entries(scripts[packageManager])) {
+    pkg.setScript(scriptName, script)
+  }
 
   pkg.uninstall('@adonisjs/sink')
   pkg.uninstall('@poppinss/utils')

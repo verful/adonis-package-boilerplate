@@ -9,10 +9,18 @@
   <p>A easy way to create AdonisJS packages</p>
 </div>
 
-## **Pre-requisites**
-As the template currently only works with yarn, `yarn` is a requisite
-
 ## **Usage**
 
 1. Press the "Use this template" button at the top of this page to create a new repository with the contents of this template.
-2. Run `yarn configure`
+2. Install the required dependencies using your preferred package manager
+```bash
+npm install
+yarn install
+pnpm install
+```
+3. Run the configuration script using your preffered package manager
+```bash
+npm run configure
+yarn configure
+pnpm configure
+```

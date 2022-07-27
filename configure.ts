@@ -148,7 +148,7 @@ async function configure() {
   await fs.writeFile(`./providers/${providerName}.ts`, providerTemplate(providerName))
   await fs.unlink('./providers/.gitkeep')
   await fs.unlink('./src/.gitkeep')
-  await fs.unlink('./github/banner.png')
+  await fs.unlink('./.github/banner.png')
 
   if (!useEslint) {
     pkg.removeScript('pretest')

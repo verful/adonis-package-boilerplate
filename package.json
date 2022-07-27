@@ -21,7 +21,8 @@
     "version": "yarn build",
     "prepublishOnly": "yarn build",
     "lint": "eslint . --ext=.ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {},
   "devDependencies": {

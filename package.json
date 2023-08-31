@@ -1,12 +1,13 @@
 {
-  "name": "@verful/adonis-package-template",
+  "name": "@verful/adonis-package-boilerplate",
   "version": "1.0.0",
-  "description": "A template for AdonisJS packages",
+  "description": "A boilerplate for AdonisJS packages",
   "keywords": [
     "typescript",
     "adonisjs",
     "package",
-    "template"
+    "template",
+    "boilerplate"
   ],
   "license": "MIT",
   "scripts": {
@@ -24,7 +25,6 @@
     "format": "prettier --write .",
     "prepare": "husky install"
   },
-  "dependencies": {},
   "devDependencies": {
     "@adonisjs/core": "^5.8.5",
     "@adonisjs/require-ts": "^2.0.12",
@@ -38,17 +38,17 @@
     "@poppinss/utils": "^5.0.0",
     "@types/node": "^18.0.6",
     "copyfiles": "^2.4.1",
-    "del-cli": "^4.0.1",
+    "del-cli": "^5.1.0",
     "eslint": "^8.20.0",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-adonis": "^2.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "execa": "^5",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "np": "^7.6.1",
-    "prettier": "^2.7.1",
-    "typescript": "^4.7.3"
+    "lint-staged": "^14.0.1",
+    "np": "^8.0.4",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   },
   "main": "",
   "files": [

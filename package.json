@@ -46,7 +46,6 @@
     "execa": "^5",
     "husky": "^8.0.1",
     "lint-staged": "^14.0.1",
-    "np": "^8.0.4",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
@@ -106,17 +105,18 @@
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ]
+    ],
+    "rules": {
+      "body-max-line-length": [
+        2,
+        "always",
+        255
+      ]
+    }
   },
   "lint-staged": {
     "*.ts": [
       "eslint --fix"
     ]
-  },
-  "np": {
-    "message": "chore(release): %s",
-    "tag": "latest",
-    "branch": "main",
-    "anyBranch": false
   }
 }

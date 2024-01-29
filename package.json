@@ -26,7 +26,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@adonisjs/core": "^5.9.0",
+    "@adonisjs/core": "^6.2.2",
     "@adonisjs/sink": "^5.4.3",
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",

@@ -5,6 +5,9 @@
   "engines": {
     "node": ">=20"
   },
+  "files": [
+    "build"
+  ],
   "main": "build/index.js",
   "type": "module",
   "author": "Arthur Rezende <arthur-er@protonmail.com>",
@@ -21,7 +24,12 @@
   "scripts": {
     "test": "node --enable-source-maps --loader=ts-node/esm bin/test.ts"
   },
+  "dependencies": {
+    "@poppinss/utils": "^6.7.2"
+  },
   "devDependencies": {
+    "@adonisjs/assembler": "^7.1.1",
+    "@adonisjs/core": "^6.2.3",
     "@japa/assert": "^2.1.0",
     "@japa/runner": "^3.1.1",
     "@types/node": "^20.11.19",
@@ -31,6 +39,9 @@
     "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "@adonisjs/core": "^6.2.3"
   },
   "prettier": "@verful/tooling-configs/prettier"
 }

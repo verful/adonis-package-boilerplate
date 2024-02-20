@@ -24,7 +24,8 @@
   "scripts": {
     "test": "node --enable-source-maps --loader=ts-node/esm bin/test.ts",
     "lint": "eslint \"./**/*.ts\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "coverage": "c8 node --enable-source-maps --loader=ts-node/esm bin/test.ts"
   },
   "dependencies": {
     "@poppinss/utils": "^6.7.2"
@@ -37,6 +38,7 @@
     "@semantic-release/git": "^10.0.1",
     "@types/node": "^20.11.19",
     "@verful/tooling-configs": "^1.2.0",
+    "c8": "^9.1.0",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5",
     "semantic-release": "^23.0.2",
@@ -66,6 +68,15 @@
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ]
+    ]
+  },
+  "c8": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
     ]
   }
 }

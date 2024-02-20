@@ -1,5 +1,5 @@
-import { assert } from "@japa/assert";
-import { processCLIArgs, configure, run } from "@japa/runner";
+import { assert } from '@japa/assert'
+import { processCLIArgs, configure, run } from '@japa/runner'
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +14,11 @@ import { processCLIArgs, configure, run } from "@japa/runner";
 |
 | Please consult japa.dev/runner-config for the config docs.
 */
-processCLIArgs(process.argv.slice(2));
+processCLIArgs(process.argv.slice(2))
 configure({
-  files: ["tests/**/*.spec.ts"],
+  files: ['tests/**/*.spec.ts'],
   plugins: [assert()],
-});
+})
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +28,4 @@ configure({
 | The following "run" method is required to execute all the tests.
 |
 */
-run();
+run()

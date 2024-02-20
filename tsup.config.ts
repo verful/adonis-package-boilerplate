@@ -1,10 +1,10 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: [""],
-  outDir: "build",
+  entry: [''],
+  outDir: 'build',
   clean: true,
   dts: true,
-  format: "esm",
-  target: "esnext",
-});
+  format: 'esm',
+  target: 'esnext',
+})

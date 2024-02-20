@@ -25,7 +25,8 @@
     "test": "node --enable-source-maps --loader=ts-node/esm bin/test.ts",
     "lint": "eslint \"./**/*.ts\"",
     "typecheck": "tsc --noEmit",
-    "coverage": "c8 node --enable-source-maps --loader=ts-node/esm bin/test.ts"
+    "coverage": "c8 node --enable-source-maps --loader=ts-node/esm bin/test.ts",
+    "prepare": "husky"
   },
   "dependencies": {
     "@poppinss/utils": "^6.7.2"
@@ -40,6 +41,8 @@
     "@verful/tooling-configs": "^1.2.0",
     "c8": "^9.1.0",
     "eslint": "^8.56.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "semantic-release": "^23.0.2",
     "ts-node": "^10.9.2",
@@ -78,5 +81,8 @@
     "exclude": [
       "tests/**"
     ]
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
   }
 }

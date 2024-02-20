@@ -22,10 +22,13 @@
     "test": "node --enable-source-maps --loader=ts-node/esm bin/test.ts"
   },
   "devDependencies": {
+    "@japa/assert": "^2.1.0",
+    "@japa/runner": "^3.1.1",
     "@types/node": "^20.11.19",
     "@verful/tooling-configs": "^1.2.0",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   },

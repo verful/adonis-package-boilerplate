@@ -1,162 +1,29 @@
 {
   "name": "@verful/adonis-package-boilerplate",
+  "description": "A opinionated boilerplate for AdonisJS v6 packages",
   "version": "1.0.0",
-  "description": "A boilerplate for AdonisJS packages",
-  "keywords": [
-    "typescript",
-    "adonisjs",
-    "package",
-    "template",
-    "boilerplate"
-  ],
-  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "build/index.js",
+  "type": "module",
   "scripts": {
-    "configure": "node --require=@adonisjs/require-ts/build/register configure.ts",
-    "pretest": "yarn lint",
-    "test": "node --require=@adonisjs/require-ts/build/register bin/test.ts",
-    "clean": "del-cli build",
-    "copyfiles": "copyfiles \"templates/**/*.txt\" \"instructions.md\" build",
-    "compile": "yarn lint && yarn clean && tsc",
-    "build": "yarn compile && yarn copyfiles",
-    "release": "np --message=\"chore(release): %s\"",
-    "version": "yarn build",
-    "prepublishOnly": "yarn build",
-    "lint": "eslint . --ext=.ts",
-    "format": "prettier --write .",
-    "prepare": "husky install"
+    "test": "node --enable-source-maps --loader=ts-node/esm bin/test.ts"
   },
-  "devDependencies": {
-    "@adonisjs/core": "^5.9.0",
-    "@adonisjs/sink": "^5.4.3",
-    "@commitlint/cli": "^18.4.4",
-    "@commitlint/config-conventional": "^18.4.4",
-    "@japa/assert": "^1.4.1",
-    "@japa/run-failed-tests": "^1.1.1",
-    "@japa/runner": "^2.5.1",
-    "@japa/spec-reporter": "^1.3.3",
-    "@poppinss/utils": "^5.0.0",
-    "@types/node": "^18.19.8",
-    "copyfiles": "^2.4.1",
-    "del-cli": "^5.1.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-adonis": "^2.1.1",
-    "eslint-plugin-import-helpers": "^1.3.1",
-    "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-unicorn": "^50.0.1",
-    "execa": "^5",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.2.4",
-    "typescript": "^5.3.3"
-  },
-  "main": "",
-  "files": [
-    "build/adonis-typings",
-    "build/commands",
-    "build/providers",
-    "build/src",
-    "build/templates",
-    "build/instructions.md"
+  "author": "Arthur Rezende <arthur-er@protonmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "adonis",
+    "adonisjs",
+    "adonis-framework"
   ],
-  "types": "build/adonis-typings/index.d.ts",
   "publishConfig": {
     "access": "public",
     "tag": "latest"
   },
-  "adonisjs": {
-    "instructionsMd": "./build/instructions.md",
-    "preloads": [],
-    "templates": {},
-    "types": "@package/slug",
-    "providers": [
-      "@package/slug"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:adonis/typescriptPackage",
-      "plugin:unicorn/recommended",
-      "prettier"
-    ],
-    "plugins": [
-      "prettier",
-      "eslint-plugin-import-helpers"
-    ],
-    "rules": {
-      "prettier/prettier": "error",
-      "import-helpers/order-imports": [
-        "warn",
-        {
-          "newlinesBetween": "always",
-          "groups": [
-            "/node:(.*)/",
-            "module",
-            "/@ioc:(.*)/",
-            [
-              "parent",
-              "sibling",
-              "index"
-            ]
-          ],
-          "alphabetize": {
-            "order": "asc",
-            "ignoreCase": true
-          }
-        }
-      ],
-      "unicorn/prefer-module": "off",
-      "unicorn/prefer-top-level-await": "off",
-      "unicorn/text-encoding-identifier-case": "off",
-      "unicorn/no-null": "off",
-      "unicorn/no-array-reduce": "off",
-      "unicorn/prevent-abbreviations": [
-        "error",
-        {
-          "allowList": {
-            "env": true
-          }
-        }
-      ],
-      "unicorn/filename-case": [
-        "error",
-        {
-          "cases": {
-            "snakeCase": true
-          }
-        }
-      ],
-      "unicorn/no-array-callback-reference": "off"
-    }
-  },
-  "eslintIgnore": [
-    "build"
-  ],
-  "prettier": {
-    "trailingComma": "es5",
-    "semi": false,
-    "singleQuote": true,
-    "useTabs": false,
-    "quoteProps": "consistent",
-    "bracketSpacing": true,
-    "arrowParens": "always",
-    "printWidth": 100
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "body-max-line-length": [
-        2,
-        "always",
-        255
-      ]
-    }
-  },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --fix"
-    ]
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@verful/tooling-configs": "^1.2.0",
+    "typescript": "^5.3.3"
   }
 }

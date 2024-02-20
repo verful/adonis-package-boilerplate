@@ -7,9 +7,6 @@
   },
   "main": "build/index.js",
   "type": "module",
-  "scripts": {
-    "test": "node --enable-source-maps --loader=ts-node/esm bin/test.ts"
-  },
   "author": "Arthur Rezende <arthur-er@protonmail.com>",
   "license": "MIT",
   "keywords": [
@@ -21,9 +18,16 @@
     "access": "public",
     "tag": "latest"
   },
+  "scripts": {
+    "test": "node --enable-source-maps --loader=ts-node/esm bin/test.ts"
+  },
   "devDependencies": {
     "@types/node": "^20.11.19",
     "@verful/tooling-configs": "^1.2.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
     "typescript": "^5.3.3"
-  }
+  },
+  "prettier": "@verful/tooling-configs/prettier"
 }

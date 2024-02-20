@@ -22,7 +22,9 @@
     "tag": "latest"
   },
   "scripts": {
-    "test": "node --enable-source-maps --loader=ts-node/esm bin/test.ts"
+    "test": "node --enable-source-maps --loader=ts-node/esm bin/test.ts",
+    "lint": "eslint \"./**/*.ts\"",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@poppinss/utils": "^6.7.2"
@@ -32,10 +34,12 @@
     "@adonisjs/core": "^6.2.3",
     "@japa/assert": "^2.1.0",
     "@japa/runner": "^3.1.1",
+    "@semantic-release/git": "^10.0.1",
     "@types/node": "^20.11.19",
     "@verful/tooling-configs": "^1.2.0",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5",
+    "semantic-release": "^23.0.2",
     "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
@@ -43,5 +47,25 @@
   "peerDependencies": {
     "@adonisjs/core": "^6.2.3"
   },
-  "prettier": "@verful/tooling-configs/prettier"
+  "prettier": "@verful/tooling-configs/prettier",
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  }
 }

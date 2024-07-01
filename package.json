@@ -33,11 +33,11 @@
   },
   "devDependencies": {
     "@adonisjs/assembler": "^7.7.0",
-    "@adonisjs/core": "^6.11.0",
+    "@adonisjs/core": "^6.12.1",
     "@japa/assert": "^2.1.0",
     "@japa/runner": "^3.1.4",
     "@semantic-release/git": "^10.0.1",
-    "@types/node": "^20.14.2",
+    "@types/node": "^20.14.9",
     "@verful/tooling-configs": "^1.2.0",
     "c8": "^9.1.0",
     "eslint": "^8.56.0",
@@ -47,10 +47,10 @@
     "semantic-release": "^23.0.2",
     "ts-node": "^10.9.2",
     "tsup": "^8.1.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.2"
   },
   "peerDependencies": {
-    "@adonisjs/core": "^6.11.0"
+    "@adonisjs/core": "^6.12.1"
   },
   "prettier": "@verful/tooling-configs/prettier",
   "release": {
